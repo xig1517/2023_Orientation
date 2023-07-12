@@ -1,9 +1,10 @@
 import config from "../../../config.js";
+import _entityList from "../_entityList.js";
 
 import { Game } from "../../game.js";
 import { DynamicEntity } from "./dynamicEntity.js";
 
-class Player extends DynamicEntity implements IPlayer {
+export class Player extends DynamicEntity implements IPlayer {
 
     constructor(id: string, private speed: number) {
         super(id, 'Player', config.imagePath.player.standing);
@@ -32,8 +33,6 @@ class Player extends DynamicEntity implements IPlayer {
 
 }
 
-const player = new Player('player', config.speed.player);
-
 export function getPlayer() {
-    return player;
+    return _entityList.player;
 }

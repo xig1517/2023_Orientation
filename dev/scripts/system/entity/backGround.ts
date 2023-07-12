@@ -1,10 +1,11 @@
 import config from "../../config.js";
+import _entityList from "./_entityList.js";
 
 import { Entity } from "./entity.js";
 import { NPC, getNPC } from "./dynamicEntity/npc.js";
 import { Portal, getPortal } from "./dynamicEntity/portal.js";
 
-class BackGround extends Entity implements IBackGround {
+export class BackGround extends Entity implements IBackGround {
 
     constructor(
         id: string,
@@ -45,11 +46,6 @@ const getEntity = (entityId: string): NPC | Portal => {
     return getPortal(entityId);
 }
 
-const backGroundList = [
-    new BackGround('BG:Home', undefined, 'BG:2', ['NPC:1']),
-    new BackGround('BG:2', 'BG:Home', undefined, ['Portal:exit'])
-]
-
 export function getBGClass(id: string) {
-    return backGroundList.find(backGround => backGround.getId() == id);
+    return _entityList.backGround.find(backGround => backGround.getId() == id);
 }

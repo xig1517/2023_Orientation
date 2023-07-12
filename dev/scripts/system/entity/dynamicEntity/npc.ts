@@ -1,5 +1,7 @@
-import { DynamicEntity } from "./dynamicEntity.js";
 import config from "../../../config.js";
+import _entityList from "../_entityList.js";
+
+import { DynamicEntity } from "./dynamicEntity.js";
 import { Game } from "../../game.js";
 import { TextBox } from "../textBox.js";
 
@@ -28,10 +30,6 @@ export class NPC extends DynamicEntity implements INPC {
 
 }
 
-const npcList = [
-    new NPC('NPC:1', '第一個NPC', [100, 200])
-]
-
 export function getNPC(id: string) {
-    return npcList.find(npc => npc.getId() == id);
+    return _entityList.npc.find(npc => npc.getId() == id);
 }

@@ -1,9 +1,11 @@
 import config from "../../../config.js";
+import _entityList from "../_entityList.js";
+
 import { DynamicEntity } from "./dynamicEntity.js";
 
 export class Portal extends DynamicEntity implements IPortal {
 
-    constructor(id: string, private pos: [number, number], private actionFunc: Function) {
+    constructor(id: string, private pos: [number, number], private directLink: string) {
         super(id, 'Portal', config.imagePath.portal);
 
         this.imagePath = config.imagePath.portal;
@@ -15,17 +17,11 @@ export class Portal extends DynamicEntity implements IPortal {
     }
 
     action() {
-        this.actionFunc();
+        document.location.href = this.directLink;
     }
 
 }
 
-const portalList = [
-    new Portal('Portal:exit', [400, 400], function () {
-        document.location.href = "https://www.google.com.tw/";
-    })
-]
-
 export function getPortal(id: string) {
-    return portalList.find(portal => portal.getId() == id);
+    return _entityList.portal.find(portal => portal.getId() == id);
 }

@@ -1,4 +1,4 @@
-import config from "../../config.js";
+import _entityList from "./_entityList.js";
 
 export class Entity implements IEntity {
 
@@ -40,14 +40,6 @@ export class Entity implements IEntity {
 
 }
 
-export const entityList = [
-    new Entity('upArrow', 'ActionButtom', config.imagePath.buttom['upArrow']),
-    new Entity('downArrow', 'ActionButtom', config.imagePath.buttom['downArrow']),
-    new Entity('leftArrow', 'ActionButtom', config.imagePath.buttom['leftArrow']),
-    new Entity('rightArrow', 'ActionButtom', config.imagePath.buttom['rightArrow']),
-    new Entity('interact', 'ActionButtom', config.imagePath.buttom['interact'])
-]
-
 export function getEntity(id: string) {
-    return entityList.find(entity => entity.getId() == id);
+    return _entityList.entity.find(entity => entity.getId() == id);
 }
