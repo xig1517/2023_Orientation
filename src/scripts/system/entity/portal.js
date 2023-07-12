@@ -1,6 +1,6 @@
-import config from "../../../config.js";
-import _entityList from "../_entityList.js";
-import { DynamicEntity } from "./dynamicEntity.js";
+import config from "../../config.js";
+import _entityList from "./_entityList.js";
+import { DynamicEntity } from "./dynamicEntity/dynamicEntity.js";
 export class Portal extends DynamicEntity {
     constructor(id, directLink) {
         super(id, 'Portal', config.imagePath.portal);

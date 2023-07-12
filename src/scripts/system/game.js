@@ -43,7 +43,8 @@ export class Game {
             getBGClass(Game.currentBGId).getElement().getBoundingClientRect()
         ];
         const pos = player.getPosition();
-        player.setPosition((to == 'right' ? bgRect.left : (to == 'left' ? bgRect.right - plRect.width : pos.left)), pos.top);
+        // 決定玩家的位置
+        player.setPosition((to == 'right' ? bgRect.left + 'px' : (to == 'left' ? (bgRect.right - plRect.width) + 'px' : pos.left + 'px')), pos.top + 'px');
     }
     static interact() {
         const [player, backGround] = [

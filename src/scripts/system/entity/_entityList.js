@@ -13,11 +13,11 @@ export default {
         new Entity('interact', 'ActionButtom', config.imagePath.buttom['interact'])
     ],
     npc: [
-        new NPC('NPC:1', '第一個NPC', [100, 200])
+        new NPC('NPC:1', '第一個NPC')
     ],
     player: new Player('player', config.speed.player),
     portal: [
-        new Portal('Portal:exit', [400, 400], "https://www.google.com.tw/")
+        new Portal('Portal:exit', "https://www.google.com.tw/")
     ],
     backGround: [
         new BackGround('BG:Home', undefined, 'BG:2', ['NPC:1']),
