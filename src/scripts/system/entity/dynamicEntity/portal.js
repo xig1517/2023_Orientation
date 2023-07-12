@@ -1,10 +1,11 @@
 import config from "../../../config.js";
+import _entityList from "../_entityList.js";
 import { DynamicEntity } from "./dynamicEntity.js";
 export class Portal extends DynamicEntity {
-    constructor(id, pos, actionFunc) {
+    constructor(id, pos, directLink) {
         super(id, 'Portal', config.imagePath.portal);
         this.pos = pos;
-        this.actionFunc = actionFunc;
+        this.directLink = directLink;
         this.imagePath = config.imagePath.portal;
     }
     summon() {
@@ -12,14 +13,9 @@ export class Portal extends DynamicEntity {
         this.setPosition(this.pos[0], this.pos[1]);
     }
     action() {
-        this.actionFunc();
+        document.location.href = this.directLink;
     }
 }
-const portalList = [
-    new Portal('Portal:exit', [400, 400], function () {
-        document.location.href = "https://www.google.com.tw/";
-    })
-];
 export function getPortal(id) {
-    return portalList.find(portal => portal.getId() == id);
+    return _entityList.portal.find(portal => portal.getId() == id);
 }

@@ -1,21 +1,20 @@
+import _entityList from "./entity/_entityList.js";
 import { getBGClass } from "./entity/backGround.js";
 import { getNPC } from "./entity/dynamicEntity/npc.js";
 import { getPlayer } from "./entity/dynamicEntity/player.js";
 import { getPortal } from "./entity/dynamicEntity/portal.js";
-import { entityList } from "./entity/entity.js";
 export class Game {
     static initGame() {
         Game.currentBGId = 'BG:Home';
         Game.status = 'walking';
         getBGClass(Game.currentBGId).summon();
         getPlayer().summon();
-        entityList.forEach(entity => entity.summon());
+        _entityList.entity.forEach(entity => entity.summon());
     }
     // 玩家的下一個位置是否在邊界之外(僅適用於玩家)
     static isOutSide(pos) {
-        const player = getPlayer();
         const [plRect, bgRect] = [
-            player.getElement().getBoundingClientRect(),
+            getPlayer().getElement().getBoundingClientRect(),
             getBGClass(Game.currentBGId).getElement().getBoundingClientRect()
         ];
         if (bgRect.top >= pos.top)

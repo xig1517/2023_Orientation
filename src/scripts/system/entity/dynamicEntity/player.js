@@ -1,7 +1,8 @@
 import config from "../../../config.js";
+import _entityList from "../_entityList.js";
 import { Game } from "../../game.js";
 import { DynamicEntity } from "./dynamicEntity.js";
-class Player extends DynamicEntity {
+export class Player extends DynamicEntity {
     constructor(id, speed) {
         super(id, 'Player', config.imagePath.player.standing);
         this.speed = speed;
@@ -31,7 +32,6 @@ class Player extends DynamicEntity {
         this.changePath(config.imagePath.player.running);
     }
 }
-const player = new Player('player', config.speed.player);
 export function getPlayer() {
-    return player;
+    return _entityList.player;
 }

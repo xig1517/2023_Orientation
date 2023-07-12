@@ -10,8 +10,9 @@ var __classPrivateFieldGet = (this && this.__classPrivateFieldGet) || function (
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _NPC_name;
-import { DynamicEntity } from "./dynamicEntity.js";
 import config from "../../../config.js";
+import _entityList from "../_entityList.js";
+import { DynamicEntity } from "./dynamicEntity.js";
 import { Game } from "../../game.js";
 import { TextBox } from "../textBox.js";
 export class NPC extends DynamicEntity {
@@ -34,9 +35,6 @@ export class NPC extends DynamicEntity {
     }
 }
 _NPC_name = new WeakMap();
-const npcList = [
-    new NPC('NPC:1', '第一個NPC', [100, 200])
-];
 export function getNPC(id) {
-    return npcList.find(npc => npc.getId() == id);
+    return _entityList.npc.find(npc => npc.getId() == id);
 }
