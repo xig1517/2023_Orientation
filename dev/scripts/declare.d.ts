@@ -11,6 +11,11 @@ declare interface IPosition {
     right: number
 }
 
+declare interface ISize {
+    width: number,
+    height: number,
+}
+
 /**
  * 定義每一種Element都會對應一個Entity
  * 
@@ -61,15 +66,19 @@ declare interface IBackGround extends IEntity {
 }
 
 /**
- * 需要調整位置的Entity定義為Charactor 子類包含Player和NPC
+ * 被互動、更改大小、更改位置的Entity 定義為DynamicEntity
  * 
  * @abstract class Charactor
  */
 declare interface IDynamicEntity extends IEntity {
     /** 獲取Entity位置 */
     getPosition(): IPosition;
+    /** 獲取Entity大小 */
+    getSize(): ISize;
     /** 設定Entity座標 */
-    setPosition(x: number, y: number): void;
+    setPosition(x: string, y: string): void;
+    /** 設定Entity大小 */
+    setSize(width: string, height: string): void;
 }
 
 /**
@@ -107,7 +116,7 @@ declare interface INPC extends IDynamicEntity {
  * 
  * @class Portal
  */
-declare interface IPortal extends IDynamicEntity {
+declare interface IPortal extends IEntity {
     /** 傳送門的位置 */
     // pos: [number, number]
     /** 要導向的網站 */
