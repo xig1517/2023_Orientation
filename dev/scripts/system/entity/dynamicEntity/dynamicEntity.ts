@@ -11,23 +11,39 @@ export abstract class DynamicEntity extends Entity implements IDynamicEntity {
     }
 
     getPosition(): IPosition {
-        const charactorRect = this.getElement().getBoundingClientRect();
+        const rect = this.getElement().getBoundingClientRect();
 
         return {
-            top: charactorRect.top,
-            bottom: charactorRect.bottom,
-            left: charactorRect.left,
-            right: charactorRect.right
+            top: rect.top,
+            bottom: rect.bottom,
+            left: rect.left,
+            right: rect.right
         }
     }
 
-    setPosition(x: number, y: number) {
-        const charactor = this.getElement();
+    getSize(): ISize {
+        const rect = this.getElement().getBoundingClientRect();
 
-        charactor.style.left = x + 'px'; // left
-        charactor.style.top = y + 'px'; // top
+        return {
+            width: rect.width,
+            height: rect.height,
+        };
+    }
+
+    setPosition(x: string, y: string) {
+        const element = this.getElement();
+
+        element.style.left = x; // left
+        element.style.top = y; // top
 
         return this;
+    }
+
+    setSize(width: string, height: string) {
+        const element = this.getElement();
+
+        element.style.width = width;
+        element.style.height = height;
     }
 
 }

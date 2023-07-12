@@ -30,7 +30,7 @@ export class Player extends DynamicEntity implements IPlayer {
         const result = Game.isOutSide(pos);
         if (typeof result != 'undefined') return Game.loadFollowingBG(result);
 
-        this.setPosition(pos.left, pos.top);
+        this.setPosition(pos.left + 'px', pos.top + 'px');
         this.changePath(config.imagePath.player.running)
     }
 
