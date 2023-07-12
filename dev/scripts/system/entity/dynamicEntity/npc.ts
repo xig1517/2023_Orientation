@@ -7,15 +7,16 @@ import { TextBox } from "../textBox.js";
 
 export class NPC extends DynamicEntity implements INPC {
 
-    #name: string;
-
-    constructor(id: string, name: string, private readonly pos: [number, number]) {
+    constructor(
+        id: string,
+        private readonly name: string,
+        private readonly pos: [number, number]
+    ) {
         super(id, 'NPC', config.imagePath.npc[id]);
-        this.#name = name;
     }
 
     getName() {
-        return this.#name;
+        return this.name;
     }
 
     summon() {

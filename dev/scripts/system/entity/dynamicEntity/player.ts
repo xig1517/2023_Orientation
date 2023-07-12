@@ -6,7 +6,10 @@ import { DynamicEntity } from "./dynamicEntity.js";
 
 export class Player extends DynamicEntity implements IPlayer {
 
-    constructor(id: string, private speed: number) {
+    constructor(
+        id: string,
+        private speed: number
+    ) {
         super(id, 'Player', config.imagePath.player.standing);
     }
 

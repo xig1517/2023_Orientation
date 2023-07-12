@@ -3,7 +3,10 @@ import { Entity, getEntity } from "./entity.js";
 
 export class TextBox extends Entity implements ITextBox {
 
-    constructor(id: string, private readonly dialogue: string[]) {
+    constructor(
+        id: string,
+        private readonly dialogue: string[]
+    ) {
         super(id, 'TextBox');
     }
 

@@ -2,7 +2,11 @@ import { Entity } from "../entity.js";
 
 export abstract class DynamicEntity extends Entity implements IDynamicEntity {
 
-    constructor(id: string, className: string, imagePath: string) {
+    constructor(
+        id: string,
+        className: string,
+        imagePath: string
+    ) {
         super(id, className, imagePath);
     }
 
