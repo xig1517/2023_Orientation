@@ -7,18 +7,11 @@ export class Portal extends DynamicEntity implements IPortal {
 
     constructor(
         id: string,
-        private pos: [number, number],
         private directLink: string
     ) {
-
         super(id, 'Portal', config.imagePath.portal);
 
         this.imagePath = config.imagePath.portal;
-    }
-
-    summon() {
-        super.summon();
-        this.setPosition(this.pos[0], this.pos[1]);
     }
 
     action() {

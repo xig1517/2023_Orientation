@@ -9,19 +9,13 @@ export class NPC extends DynamicEntity implements INPC {
 
     constructor(
         id: string,
-        private readonly name: string,
-        private readonly pos: [number, number]
+        private readonly name: string
     ) {
         super(id, 'NPC', config.imagePath.npc[id]);
     }
 
     getName() {
         return this.name;
-    }
-
-    summon() {
-        super.summon();
-        this.setPosition(this.pos[0], this.pos[1]);
     }
 
     action() {
