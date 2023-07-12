@@ -17,10 +17,10 @@ declare interface IPosition {
  * @class Entity
  */
 declare interface IEntity {
-    /** 此Entity的類別 用來統整CSS */
-    // readonly className: string;
     /** Entity的ID 與對應的Element ID相同 */
     // readonly id: string;
+    /** 此Entity的類別 用來統整CSS */
+    // readonly className: string;
     /** 圖片路徑 */
     // readonly imagePath: string;
 
@@ -78,6 +78,9 @@ declare interface IDynamicEntity extends IEntity {
  * @class Player
  */
 declare interface IPlayer extends IDynamicEntity {
+    /** 玩家移動的速度 */
+    // speed: number;
+
     /** 使角色往某個方向移動 */
     move(direction: DirectionType): void;
 }
@@ -88,6 +91,11 @@ declare interface IPlayer extends IDynamicEntity {
  * @class NPC
  */
 declare interface INPC extends IDynamicEntity {
+    /** NPC的名稱 可以在對話時顯示 */
+    // name: string;
+    /** NPC的位置 */
+    // readonly pos: string;
+
     /** 獲取NPC的名稱 */
     getName(): string;
     /** 和玩家互動時要執行的動作 */
@@ -100,6 +108,11 @@ declare interface INPC extends IDynamicEntity {
  * @class Portal
  */
 declare interface IPortal extends IDynamicEntity {
+    /** 傳送門的位置 */
+    // pos: [number, number]
+    /** 要導向的網站 */
+    // directLink: string
+
     /** 和玩家互動時要執行的動作 */
     action(): void;
 }
@@ -110,4 +123,10 @@ declare interface IPortal extends IDynamicEntity {
  * 
  * @class TextBox
  */
-declare interface ITextBox extends IEntity { }
+declare interface ITextBox extends IEntity {
+    /** 對話框的文字內容 */
+    // readonly dialogue: string[]
+
+    /** 生成文字內容 */
+    // #readingStory();
+}
