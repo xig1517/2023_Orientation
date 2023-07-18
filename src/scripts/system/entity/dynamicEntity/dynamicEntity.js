@@ -6,8 +6,6 @@ export class DynamicEntity extends Entity {
     getPosition() {
         const rect = this.getElement().getBoundingClientRect();
         return {
-            top: rect.top,
-            bottom: rect.bottom,
             left: rect.left,
             right: rect.right
         };
@@ -19,10 +17,9 @@ export class DynamicEntity extends Entity {
             height: rect.height,
         };
     }
-    setPosition(x, y) {
+    setPosition(x) {
         const element = this.getElement();
         element.style.left = x; // left
-        element.style.top = y; // top
         return this;
     }
     setSize(width, height) {

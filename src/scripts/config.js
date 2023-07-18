@@ -13,14 +13,15 @@ export default {
         },
         portal: './images/door.jpg',
         buttom: {
-            upArrow: './images/buttom/upArrow.png',
-            downArrow: './images/buttom/downArrow.png',
             leftArrow: './images/buttom/leftArrow.png',
             rightArrow: './images/buttom/rightArrow.png',
             interact: './images/buttom/interact.png'
         }
     },
     story: {
+        'Welcome:Message': [
+            '電腦玩家請使用a(左),d(右),f(互動)來操作'
+        ],
         'NPC:1': [
             '你好',
             '我是NPC一號',

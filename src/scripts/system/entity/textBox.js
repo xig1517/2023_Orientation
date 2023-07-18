@@ -14,6 +14,7 @@ export class TextBox extends Entity {
     }
     summon() {
         super.summon('div');
+        Game.status = 'reading';
         __classPrivateFieldGet(this, _TextBox_instances, "m", _TextBox_readingStory).call(this);
     }
 }

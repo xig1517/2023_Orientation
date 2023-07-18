@@ -3,8 +3,6 @@ import { Game } from "../game.js";
 import { getPlayer } from "../entity/dynamicEntity/player.js";
 import { getEntity } from "../entity/entity.js";
 let mt = {
-    up: false,
-    down: false,
     left: false,
     right: false
 };
@@ -27,12 +25,6 @@ function movement() {
 const computerClient = () => {
     window.addEventListener('keydown', (ev) => {
         switch (ev.key) {
-            case 'w':
-                mt.up = true;
-                break;
-            case 's':
-                mt.down = true;
-                break;
             case 'a':
                 mt.left = true;
                 break;
@@ -47,12 +39,6 @@ const computerClient = () => {
     });
     window.addEventListener('keyup', (ev) => {
         switch (ev.key) {
-            case 'w':
-                mt.up = false;
-                break;
-            case 's':
-                mt.down = false;
-                break;
             case 'a':
                 mt.left = false;
                 break;
@@ -64,8 +50,6 @@ const computerClient = () => {
 };
 const mobileClient = () => {
     [
-        ['upArrow', 'up'],
-        ['downArrow', 'down'],
         ['leftArrow', 'left'],
         ['rightArrow', 'right']
     ].forEach(arrow => {
