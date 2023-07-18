@@ -26,8 +26,6 @@ export abstract class Game {
             getBGClass(Game.currentBGId).getElement().getBoundingClientRect()
         ];
 
-        if (bgRect.top >= pos.top) return 'up';
-        if (bgRect.bottom <= (pos.top + plRect.height)) return 'down';
         if (bgRect.left >= pos.left) return 'left';
         if (bgRect.right <= (pos.left + plRect.width)) return 'right';
 
@@ -38,7 +36,7 @@ export abstract class Game {
     static loadFollowingBG(to: DirectionType) {
         const currentBG = getBGClass(Game.currentBGId);
 
-        const nextBGId = (to == 'right' ? currentBG.getNext() : (to == 'left' ? currentBG.getLast() : undefined));
+        const nextBGId = to == 'right' ? currentBG.getNext() : currentBG.getLast();
         if (typeof nextBGId == 'undefined') return; // 沒有上一頁或下一頁 或是不需要翻頁
 
         // 更換頁面
@@ -54,7 +52,7 @@ export abstract class Game {
         const pos = player.getPosition();
 
         // 決定玩家的位置
-        player.setPosition((to == 'right' ? bgRect.left + 'px' : (to == 'left' ? (bgRect.right - plRect.width) + 'px' : pos.left + 'px')), pos.top + 'px')
+        player.setPosition(to == 'right' ? bgRect.left + 'px' : bgRect.right - plRect.width + 'px')
     }
 
     static interact() {
@@ -77,9 +75,7 @@ export abstract class Game {
                     const entityPos = entity.getPosition();
                     return !(
                         entityPos.right < plPos.left ||
-                        entityPos.left > plPos.right ||
-                        entityPos.bottom < plPos.top ||
-                        entityPos.top > plPos.bottom
+                        entityPos.left > plPos.right
                     );
                 });
 

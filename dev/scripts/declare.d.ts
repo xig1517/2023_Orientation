@@ -5,8 +5,6 @@ declare type DirectionType = 'up' | 'down' | 'left' | 'right';
 declare type StatusType = 'reading' | 'walking'
 
 declare interface IPosition {
-    top: number,
-    bottom: number,
     left: number,
     right: number
 }

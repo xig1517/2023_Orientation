@@ -19,7 +19,6 @@ export class NPC extends DynamicEntity implements INPC {
     }
 
     action() {
-        Game.status = 'reading';
         new TextBox(this.id + '_textBox', config.story[this.id]).summon();
     }
 

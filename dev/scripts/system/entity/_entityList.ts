@@ -8,8 +8,6 @@ import { BackGround } from "./backGround.js"
 
 export default {
     entity: [
-        new Entity('upArrow', 'ActionButtom', config.imagePath.buttom['upArrow']),
-        new Entity('downArrow', 'ActionButtom', config.imagePath.buttom['downArrow']),
         new Entity('leftArrow', 'ActionButtom', config.imagePath.buttom['leftArrow']),
         new Entity('rightArrow', 'ActionButtom', config.imagePath.buttom['rightArrow']),
         new Entity('interact', 'ActionButtom', config.imagePath.buttom['interact'])

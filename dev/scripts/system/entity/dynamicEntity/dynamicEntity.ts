@@ -14,8 +14,6 @@ export abstract class DynamicEntity extends Entity implements IDynamicEntity {
         const rect = this.getElement().getBoundingClientRect();
 
         return {
-            top: rect.top,
-            bottom: rect.bottom,
             left: rect.left,
             right: rect.right
         }
@@ -30,11 +28,10 @@ export abstract class DynamicEntity extends Entity implements IDynamicEntity {
         };
     }
 
-    setPosition(x: string, y: string) {
+    setPosition(x: string) {
         const element = this.getElement();
 
         element.style.left = x; // left
-        element.style.top = y; // top
 
         return this;
     }

@@ -19,7 +19,6 @@ export class TextBox extends Entity implements ITextBox {
             if (ev instanceof KeyboardEvent && ev.key != 'f') return;
             if (!isWaiting) return;
 
-
             page++;
             isWaiting = false;
             if (page != this.dialogue.length) return showDialogue(page);
@@ -51,6 +50,8 @@ export class TextBox extends Entity implements ITextBox {
 
     summon() {
         super.summon('div');
+
+        Game.status = 'reading';
         this.#readingStory();
     }
 

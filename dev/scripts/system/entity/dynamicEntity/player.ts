@@ -16,13 +16,11 @@ export class Player extends DynamicEntity implements IPlayer {
     move(direction: DirectionType) {
         const player = this.getElement()
 
-        player.style.transform = (direction == 'right' ? 'scaleX(1)' : direction == 'left' ? 'scaleX(-1)' : player.style.transform);
+        player.style.transform = (direction == 'right' ? 'scaleX(1)' : 'scaleX(-1)')
 
         let pos = this.getPosition();
 
         switch (direction) {
-            case 'up': pos.top -= this.speed; break;
-            case 'down': pos.top += this.speed; break;
             case 'left': pos.left -= this.speed; break;
             case 'right': pos.left += this.speed; break;
         }
@@ -30,7 +28,7 @@ export class Player extends DynamicEntity implements IPlayer {
         const result = Game.isOutSide(pos);
         if (typeof result != 'undefined') return Game.loadFollowingBG(result);
 
-        this.setPosition(pos.left + 'px', pos.top + 'px');
+        this.setPosition(pos.left + 'px');
         this.changePath(config.imagePath.player.running)
     }
 
