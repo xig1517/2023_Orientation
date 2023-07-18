@@ -33,4 +33,4 @@ export default {
     speed: {
         player: 5
     }
-};
+}
