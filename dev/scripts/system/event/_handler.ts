@@ -1,5 +1,7 @@
 import { Game } from "../game.js";
+
 import { movementEvent } from "./movement.js";
+import { welcomeMessage } from "./welcome.js";
 
 export function eventHandler() {
     window.addEventListener('DOMContentLoaded', () => {
@@ -7,7 +9,8 @@ export function eventHandler() {
         Game.initGame();
 
         [
-            movementEvent
+            movementEvent,
+            welcomeMessage
         ].forEach(event => event());
 
     })
