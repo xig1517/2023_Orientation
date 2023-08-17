@@ -9,7 +9,11 @@ export default {
             running: './images/player/duck.gif'
         },
         npc: {
-            'NPC:1': './images/npc/npc1.png'
+            'NPC1': './images/npc/npc1.png',
+            'NPC2': './images/npc/npc1.png',
+            'NPC3': './images/npc/npc1.png',
+            'NPC4': './images/npc/npc1.png',
+            'NPC5': './images/npc/npc1.png'
         },
         portal: './images/door.jpg',
         buttom: {
@@ -22,13 +26,17 @@ export default {
         'Welcome:Message': [
             '電腦玩家請使用a(左),d(右),f(互動)來操作'
         ],
-        'NPC:1': [
+        'NPC1': [
             '你好',
             '我是NPC一號',
             '如果你看到這些訊息',
             '代表你的程式莫名其妙的成功了',
             '加一些很長的句子測試 asjdlkfua iolrhflkjayhfdokljawbnwrlkjdyuahjlksfbnajkyekjahnbfkjayewljkabfsljayhwejlrnbahskjfgakjwsehaoisdfyhjalkwerhj'
-        ]
+        ],
+        'NPC2': ['string'],
+        'NPC3': ['string'],
+        'NPC4': ['string'],
+        'NPC5': ['string'],
     },
     speed: {
         player: 5

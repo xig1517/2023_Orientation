@@ -13,14 +13,18 @@ export default {
         new Entity('interact', 'ActionButtom', config.imagePath.buttom['interact'])
     ],
     npc: [
-        new NPC('NPC:1', '第一個NPC')
+        new NPC('NPC1', '第一個NPC'),
+        new NPC('NPC2', '第二個NPC'),
+        new NPC('NPC3', '第三個NPC'),
+        new NPC('NPC4', '第四個NPC'),
+        new NPC('NPC5', '第五個NPC')
     ],
     player: new Player('player', config.speed.player),
     portal: [
         new Portal('Portal:exit', "https://www.google.com.tw/")
     ],
     backGround: [
-        new BackGround('BG:Home', undefined, 'BG:2', ['NPC:1']),
-        new BackGround('BG:2', 'BG:Home', undefined, ['Portal:exit'])
+        new BackGround('BG:Home', undefined, 'BG:2', ['NPC1', 'NPC2', 'NPC3']),
+        new BackGround('BG:2', 'BG:Home', undefined, ['Portal:exit', 'NPC4', 'NPC5'])
     ]
 }
