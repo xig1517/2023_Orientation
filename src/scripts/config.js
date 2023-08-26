@@ -1,8 +1,17 @@
 export default {
     imagePath: {
         backGround: {
-            'BG:Home': './images/backGround/bg_1.png',
-            'BG:2': './images/backGround/bg_2.png'
+            PC: {
+                'BG:Home': './images/backGround/bg_1.png',
+                'BG:2': './images/backGround/bg_2.png',
+            },
+            Mobile: {
+                'BG:Home': './images/backGround/bg_1.png',
+                'BG:2': './images/backGround/bg_2.png',
+                'BG:3': './images/backGround/bg_1.png',
+                'BG:4': './images/backGround/bg_2.png',
+                'BG:5': './images/backGround/bg_1.png'
+            }
         },
         player: {
             standing: './images/player/pepe.gif',
