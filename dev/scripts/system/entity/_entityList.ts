@@ -23,8 +23,18 @@ export default {
     portal: [
         new Portal('Portal:exit', "https://www.google.com.tw/")
     ],
-    backGround: [
-        new BackGround('BG:Home', undefined, 'BG:2', ['NPC1', 'NPC2', 'NPC3']),
-        new BackGround('BG:2', 'BG:Home', undefined, ['Portal:exit', 'NPC4', 'NPC5'])
-    ]
+    backGround: {
+        // new BackGround(背景Id, 上一個背景的Id(如沒有undefined), 下一個背景的Id(如沒有undefined), [NPC列表]),
+        PC: [
+            new BackGround('BG:Home', undefined, 'BG:2', ['NPC1', 'NPC2', 'NPC3'], 'PC'),
+            new BackGround('BG:2', 'BG:Home', undefined, ['Portal:exit', 'NPC4', 'NPC5'], 'PC')
+        ],
+        Mobile: [
+            new BackGround('BG:Home', undefined, 'BG:2', ['NPC1'], 'Mobile'),
+            new BackGround('BG:2', 'BG:Home', 'BG:3', ['NPC2'], 'Mobile'),
+            new BackGround('BG:3', 'BG:2', 'BG:4', ['NPC3'], 'Mobile'),
+            new BackGround('BG:4', 'BG:3', 'BG:5', ['NPC4'], 'Mobile'),
+            new BackGround('BG:5', 'BG:4', undefined, ['Portal:exit', 'NPC5'], 'Mobile')
+        ]
+    }
 }
