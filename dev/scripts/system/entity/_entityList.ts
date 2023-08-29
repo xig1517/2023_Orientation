@@ -24,7 +24,7 @@ export default {
         new Portal('Portal:exit', "https://www.google.com.tw/")
     ],
     backGround: {
-        // new BackGround(背景Id, 上一個背景的Id(如沒有undefined), 下一個背景的Id(如沒有undefined), [NPC列表]),
+        // new BackGround(背景Id, 上一個背景的Id(如沒有undefined), 下一個背景的Id(如沒有undefined), [NPC列表], '手機Mobile或電腦PC'),
         PC: [
             new BackGround('BG:Home', undefined, 'BG:2', ['NPC1', 'NPC2', 'NPC3'], 'PC'),
             new BackGround('BG:2', 'BG:Home', undefined, ['Portal:exit', 'NPC4', 'NPC5'], 'PC')
